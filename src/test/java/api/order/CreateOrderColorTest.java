@@ -12,8 +12,7 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 
 import static api.testdata.OrderTestData.getTestOrder;
-import static constants.ScooterColor.BLACK;
-import static constants.ScooterColor.GREY;
+import static constants.ScooterColor.*;
 import static java.net.HttpURLConnection.HTTP_CREATED;
 import static org.hamcrest.Matchers.notNullValue;
 import static steps.OrderSteps.*;
@@ -31,9 +30,9 @@ public class CreateOrderColorTest extends BaseApiTest {
     @Parameterized.Parameters(name = "Тестовые данные: цвет = {0}")
     public static Object[] colors(){
         return new Object[]{
-                List.of(BLACK),
-                List.of(GREY),
-                List.of(BLACK, GREY),
+                List.of(BLACK.name()),
+                List.of(GREY.name()),
+                List.of(BLACK.name(), GREY.name()),
                 List.of()
         };
     }
